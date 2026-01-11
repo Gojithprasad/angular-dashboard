@@ -1,0 +1,125 @@
+<form
+  #loginForm="ngForm"
+  novalidate
+  (ngSubmit)="login(loginForm)"
+>
+
+  <div class="container-fluid page-wrapper p-0">
+
+    <!---HEADER -->
+    <header class="global-header">
+      <img src="assets/images/budget-logo.png" class="logo" alt="Budget Logo" />
+
+      <div class="header-right">
+        <span>Having Trouble? <strong>Get Help</strong></span>
+
+        <div class="lang">
+          <img src="assets/images/uk-flag.png" alt="Language" />
+          <span>Eng</span>
+          <span class="caret">▾</span>
+        </div>
+      </div>
+    </header>
+
+    <!--PAGE BODY -->
+    <div class="row m-0 flex-fill">
+
+      <!-- LEFT IMAGE (DESKTOP ONLY) -->
+      <div class="col-lg-6 d-none d-lg-block p-0">
+        <img
+          src="assets/images/login-banner.jpg"
+          alt="Login Banner"
+          class="left-image"
+        />
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <div class="login-wrapper">
+
+          <h2 class="title">Login to Budget</h2>
+          <p class="sub-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+
+          <!-- INPUT BOX -->
+          <div class="input-box">
+
+            <!-- EMAIL -->
+            <div class="field">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                [(ngModel)]="email"
+                #emailCtrl="ngModel"
+                required
+                email
+                [class.invalid]="emailCtrl.invalid && emailCtrl.touched"
+              />
+              <small *ngIf="emailCtrl.invalid && emailCtrl.touched">
+                Enter a valid email
+              </small>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- PASSWORD -->
+            <div class="field password-field">
+              <label>Password</label>
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                name="password"
+                placeholder="Enter your password"
+                [(ngModel)]="password"
+                #passwordCtrl="ngModel"
+                required
+                minlength="6"
+                [class.invalid]="passwordCtrl.invalid && passwordCtrl.touched"
+              />
+
+              <span class="show" (click)="togglePassword()">
+                {{ showPassword ? 'Hide' : 'Show' }}
+              </span>
+
+              <small *ngIf="passwordCtrl.invalid && passwordCtrl.touched">
+                Minimum 6 characters required
+              </small>
+            </div>
+          </div>
+
+          <!-- OPTIONS -->
+          <div class="options">
+            <label class="remember">
+              <input
+                type="checkbox"
+                name="rememberMe"
+                [(ngModel)]="rememberMe"
+              />
+              <span>Keep me logged in</span>
+            </label>
+
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+
+        
+          <button
+            class="login-btn"
+            type="submit"
+            [disabled]="loginForm.invalid"
+          >
+            Login
+          </button>
+
+          <div class="create">
+            <a href="#">Create New Account?</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</form>

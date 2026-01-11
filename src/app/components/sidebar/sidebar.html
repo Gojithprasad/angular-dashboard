@@ -1,0 +1,38 @@
+<aside class="sidebar">
+  <div class="logo">Budget</div>
+
+  <nav class="menu d-flex flex-column gap-1">
+    <div class="menu-item active d-flex align-items-center">
+      <span class="active-bar"></span>
+
+      <div class="menu-content d-flex align-items-center gap-2">
+        <img src="assets/icons/dashboard.png" class="menu-icon" />
+        <span class="menu-text">Dashboard</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- USER CARD -->
+  <div class="sidebar-user-card">
+    <img
+      class="user-avatar"
+      src="assets/images/user.png"
+      alt="User"
+    />
+
+    <div class="user-info">
+      <div class="user-name">Catherine</div>
+      <div class="user-phone">+91 9876543210</div>
+    </div>
+  </div>
+
+  <!-- LOGOUT -->
+  <div class="sidebar-logout" (click)="logout()">
+    <img
+      src="assets/icons/signout.svg"
+      alt="Logout"
+      class="logout-icon"
+    />
+    <span>Log Out</span>
+  </div>
+</aside>

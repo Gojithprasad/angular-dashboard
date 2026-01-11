@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Archivo', sans-serif;
+}
+h1, h2 {
+  font-weight: 600;
+}
+
+label {
+  font-weight: 400;
+}
