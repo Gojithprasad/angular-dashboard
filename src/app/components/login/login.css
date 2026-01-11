@@ -99,10 +99,9 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-
 .field:focus-within {
   box-shadow: inset 0 0 0 2px #0d5efd;
-  border-radius: 8px;
+  border-radius: 12px 12px 0 0;
 }
 
 .field label {
@@ -116,7 +115,7 @@ html, body {
   border: none;
   outline: none;
   font-size: 15px;
-  background: transparent;
+  
 }
 
 .field input:hover {
@@ -141,7 +140,10 @@ html, body {
 .password-field {
   padding-right: 60px;
 }
-
+.password-field:focus-within {
+  box-shadow: inset 0 0 0 2px #0d5efd;
+  border-radius: 0px 0px 12px 12px;
+}
 .show {
   position: absolute;
   right: 16px;
